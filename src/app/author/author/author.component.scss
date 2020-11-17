@@ -1,0 +1,25 @@
+div.main{
+  width: 80%;
+  margin: auto;
+  p{
+   font-weight: 700;
+  }
+  section{
+    mat-card{
+      margin: 0.5rem auto;
+      mat-card-subtitle{
+        display: flex;
+        span.spacer{
+          flex:1 1 auto;
+        }
+      }
+      mat-card-content{
+        span{
+          color: blue;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

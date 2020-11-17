@@ -1,0 +1,22 @@
+<div class="main">
+  <mat-card>
+    <mat-card-title>
+      {{post.title}}
+    </mat-card-title>
+    <mat-card-subtitle>
+
+      <span>{{author.first_name}} {{author.last_name}}</span>
+      <span class="spacer"></span>
+      <span>
+        {{post.date_created | date:'medium'}}</span></mat-card-subtitle>
+    <mat-card-content>{{post.text}}</mat-card-content>
+  </mat-card>
+  <p><b>Comment for the post: </b></p>
+  <section>
+    <mat-card *ngFor="let comment of comments">
+      <p><a href="#">{{comment.author_first_name}} {{comment.author_last_name}} </a></p>
+      <p>{{comment.date_created | date:'medium'}}</p>
+      <mat-card-content>{{comment.content}}</mat-card-content>
+    </mat-card>
+  </section>
+</div>

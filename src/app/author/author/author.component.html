@@ -1,0 +1,21 @@
+<div class="main">
+  <mat-card>
+    <mat-card-title>{{author.first_name}} {{author.last_name}}</mat-card-title>
+    <mat-card-content>
+      <p>Email:<a href="#"> {{author.email}}</a></p>
+      <p>Phone: <a href="#">{{author.phone}}</a></p>
+      <p>Date of Birth: {{author.date_of_birth | date: 'shortDate'}} (<span>{{author.age}}</span>)</p>
+    </mat-card-content>
+  </mat-card>
+  <p>Posts of author: </p>
+  <section class="posts">
+    <mat-card *ngFor="let post of posts">
+      <mat-card-subtitle>
+        <span>{{author.first_name}} {{author.last_name}}</span>
+        <span class="spacer"></span>
+        <span>
+          {{post.date_created | date:'medium'}}</span></mat-card-subtitle>
+      <mat-card-content> <span (click)="toPostPage(post.id)">{{post.title}}</span></mat-card-content>
+    </mat-card>
+  </section>
+</div>

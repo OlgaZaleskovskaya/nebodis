@@ -1,0 +1,22 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$nb-primary: mat-palette($mat-indigo, A400, A200, A700);
+$nb-accent: mat-palette($mat-pink, A200, A100, A400);
+$nb-warn: mat-palette($mat-red);
+$nb-success: mat-palette($mat-light-blue);
+
+$nb-theme: mat-light-theme($nb-primary, $nb-accent, $nb-warn);
+
+@include angular-material-theme($nb-theme);
+
+$primary: map-get($nb-theme, primary);
+$accent: map-get($nb-theme, accent);
+
+:root {
+  --color-primary: #{mat-color($nb-primary)};
+  --color-accent: #{mat-color($nb-accent)};
+  --color-warn: #{mat-color($nb-warn)};
+  --color-success: #{mat-color($nb-success)};
+}

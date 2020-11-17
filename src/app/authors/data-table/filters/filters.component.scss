@@ -1,0 +1,16 @@
+div.main {
+  form {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    span.ageLimit,
+    p {
+      font-size: 0.8rem;
+
+    }
+    mat-slider{
+      width:80%;
+    }
+  }
+}

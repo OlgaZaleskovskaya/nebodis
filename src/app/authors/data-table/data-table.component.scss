@@ -1,0 +1,23 @@
+div.contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+  div.aside {
+    width: 25%;
+    height: auto;
+  }
+  div.table {
+    width: 73%;
+    height: auto;
+    .full-width-table {
+      width: 98%;
+      margin: auto;
+      .mat-row {
+        height: 35px;
+      }
+    }
+  }
+}

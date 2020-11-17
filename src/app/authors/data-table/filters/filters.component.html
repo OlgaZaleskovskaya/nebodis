@@ -1,0 +1,39 @@
+<div class="main">
+  <p>Filters</p>
+  <form [formGroup]="filterForm" #form>
+    <p>Age, from <span> {{ageFrom}}</span></p>
+    <div>  <span class="ageLimit">{{ageFromMin}}</span>
+    <mat-slider thumbLabel (change)="onChangeAgeFrom($event)" #ageFromRef displayValue [displayWith]="formatLabel"
+      step="1" tickInterval="1" min="0" max="120"></mat-slider>
+    <span class="ageLimit">{{ageFromMax}}</span></div>
+
+
+    <p>Age, to <span> {{ageTo}}</span></p>
+    <div> <span class="ageLimit">{{ageToMin}}</span>
+    <mat-slider (change)="onChangeAgeTo($event)" thumbLabel #ageToRef [displayWith]="formatLabel" tickInterval="1"
+      min="0" max="120"></mat-slider>
+    <span class="ageLimit">{{ageToMax}}</span></div>
+
+    <!--   <mat-form-field>
+          <mat-label>Gender</mat-label>
+        <mat-select multiple formControlName="genderCtrl"(change) ="onChange($event)">
+            <mat-option *ngFor="let gender of genders" >
+              {{gender}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+ -->
+    <mat-form-field>
+      <mat-select placeholder="Gender" formControlName="gender" multiple>
+        <mat-option *ngFor="let gender of genderList" [value]="gender">{{gender | capitalLetter}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="name" matInput placeholder="Name" value="">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="author_data" matInput placeholder="Email, Phone, Address" value=" ">
+    </mat-form-field>
+  </form>
+</div>
